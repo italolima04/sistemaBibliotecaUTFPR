@@ -1,0 +1,426 @@
+Kind,Name,CountClassCoupled,PercentLackOfCohesion,AvgCyclomatic,SumCyclomatic,Essential,MaxNesting,CountClassBase,CountClassDerived,MaxInheritanceTree,CountDeclClass,CountDeclInstanceMethod,CountLineCode,CountLineComment
+File,"AdministradorBO.java",,,4,4,,2,,,,1,1,29,9
+File,"AdministradorMBTest.java",,,1,3,,1,,,,1,2,21,10
+File,"BotaoHorario.java",,,1,15,,1,,,,1,9,62,10
+File,"CalendarioHelper.java",,,1,31,,1,,,,1,0,199,159
+File,"CalendarioMB.java",,,1,25,,2,,,,1,18,102,32
+File,"Dia.java",,,1,8,,1,,,,1,7,33,13
+File,"ExibirReservaMB.java",,,1,13,,1,,,,1,9,68,17
+File,"GenericDAO.java",,,1,9,,1,,,,1,7,45,9
+File,"HashMapHelper.java",,,3,3,,2,,,,1,0,18,16
+File,"Hora.java",,,1,15,,1,,,,1,11,65,16
+File,"LoginFilter.java",,,1,5,,1,,,,1,3,35,17
+File,"LoginMB.java",,,2,33,,3,,,,1,16,141,42
+File,"ParserCsvBO.java",,,3,12,,2,,,,1,4,100,11
+File,"RelatorioMB.java",,,1,22,,1,,,,1,14,105,0
+File,"RelatorioReservas.java",,,1,10,,0,,,,1,10,41,4
+File,"ReservaBO.java",,,2,23,,2,,,,1,0,121,66
+File,"ReservaBOTest.java",,,1,11,,1,,,,1,6,64,20
+File,"ReservaDAO.java",,,1,13,,2,,,,1,9,85,54
+File,"ReservaDAOTest.java",,,1,7,,1,,,,1,6,58,11
+File,"ReservaPO.java",,,1,38,,1,,,,1,29,205,1
+File,"ReservaRapidaMB.java",,,1,31,,2,,,,1,20,165,42
+File,"ReservaRapidaMBTest.java",,,1,1,,0,,,,1,1,6,4
+File,"ReservasHorario.java",,,1,4,,0,,,,1,4,17,9
+File,"SalaBO.java",,,2,18,,2,,,,1,0,96,50
+File,"SalaDAO.java",,,1,13,,2,,,,1,8,86,52
+File,"SalaDAOTest.java",,,1,7,,1,,,,1,6,42,9
+File,"SalaPO.java",,,1,16,,1,,,,1,13,81,10
+File,"SessionContext.java",,,1,12,,1,,,,1,8,41,37
+File,"StatusBO.java",,,0,0,,0,,,,1,0,3,9
+File,"StatusBotao.java",,,2,7,,2,,,,1,3,50,11
+File,"StatusDAO.java",,,1,2,,0,,,,1,2,11,9
+File,"StatusDAOTest.java",,,1,3,,1,,,,1,2,13,9
+File,"StatusPO.java",,,1,12,,1,,,,1,9,70,10
+File,"UsuarioBO.java",,,1,15,,1,,,,1,0,65,32
+File,"UsuarioBOTest.java",,,1,3,,0,,,,1,3,19,2
+File,"UsuarioDAO.java",,,1,9,,2,,,,1,5,56,20
+File,"UsuarioDAOTest.java",,,1,6,,1,,,,1,5,37,3
+File,"UsuarioPO.java",,,1,26,,2,,,,1,19,147,25
+File,"bd.sql",,,0,0,,0,,,,0,,0,0
+File,"bootstrap-responsive.css",,,0,0,0,0,,,,0,,0,0
+File,"bootstrap.css",,,0,0,0,0,,,,0,,0,0
+Package,"br",,,0,0,,0,,,,0,0,0,0
+Package,"br.edu",,,0,0,,0,,,,0,0,0,0
+Package,"br.edu.utfpr",,,0,0,,0,,,,0,0,0,0
+Package,"br.edu.utfpr.biblioteca",,,0,0,,0,,,,0,0,0,0
+Package,"br.edu.utfpr.biblioteca.salas",,,0,0,,0,,,,0,0,0,0
+Package,"br.edu.utfpr.biblioteca.salas.controller",,,1,145,,3,,,,9,91,684,201
+Public Class,"br.edu.utfpr.biblioteca.salas.controller.AdministradorMBTest",2,50,1,3,,1,1,0,1,,2,15,5
+Public Constructor,"br.edu.utfpr.biblioteca.salas.controller.AdministradorMBTest.AdministradorMBTest",,,,1,1,0,,,,,,4,1
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.AdministradorMBTest.teste",,,,2,1,1,,,,,,7,0
+Public Class,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB",7,77,1,25,,2,1,0,1,,18,85,27
+Public Constructor,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.CalendarioMB",,,,1,1,0,,,,,,5,0
+Private Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.cadastrarUsuario",,,,8,1,2,,,,,,26,5
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.getDiaSelecionado",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.getMes",,,,1,1,0,,,,,,3,7
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.getMes",,,,1,1,0,,,,,,3,6
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.getMesAnterior",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.getMesPosterior",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.getNomeAnterior",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.getNomeAtual",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.getNomePosterior",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.getReserva",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.getUsuario",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.getUsuarioLogado",,,,1,1,0,,,,,,3,5
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.renderMesAnterior",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.renderMesAtual",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.renderMesPosterior",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.setDiaSelecionado",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.CalendarioMB.setUsuario",,,,1,1,0,,,,,,3,0
+Public Class,"br.edu.utfpr.biblioteca.salas.controller.ExibirReservaMB",8,77,1,13,,1,1,0,1,,9,51,12
+Public Constructor,"br.edu.utfpr.biblioteca.salas.controller.ExibirReservaMB.ExibirReservaMB",,,,1,1,0,,,,,,4,1
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ExibirReservaMB.canCancelReserva",,,,2,1,1,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ExibirReservaMB.cancelarReserva",,,,3,1,1,,,,,,11,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ExibirReservaMB.getCalendario",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ExibirReservaMB.getHora",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ExibirReservaMB.getIdReserva",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ExibirReservaMB.getReserva",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ExibirReservaMB.setHora",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ExibirReservaMB.setIdReserva",,,,2,1,1,,,,,,7,0
+Public Class,"br.edu.utfpr.biblioteca.salas.controller.LoginFilter",1,0,1,5,,1,2,0,1,,3,23,17
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginFilter.destroy",,,,1,1,0,,,,,,2,1
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginFilter.doFilter",,,,3,1,1,,,,,,14,11
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginFilter.init",,,,1,1,0,,,,,,2,1
+Public Class,"br.edu.utfpr.biblioteca.salas.controller.LoginMB",4,65,2,33,,3,1,0,1,,16,126,42
+Public Constructor,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.LoginMB",,,,1,1,0,,,,,,3,0
+Private Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.alreadyCadastrado",,,,1,1,0,,,,,,3,6
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.disabledBotaoCheckout",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.doLogin",,,,4,1,2,,,,,,23,12
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.doLogout",,,,2,1,1,,,,,,10,5
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.exibirBotaoCheckin",,,,3,3,1,,,,,,8,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.exibirBotaoCheckout",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.exibirBtnLogout",,,,2,1,1,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.exibirFormLogin",,,,2,1,1,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.fazerCheckin",,,,5,1,3,,,,,,20,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.fazerCheckout",,,,5,1,3,,,,,,19,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.getNomeUsuarioLogado",,,,1,1,0,,,,,,3,5
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.getUsuario",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.getUsuarioLogado",,,,1,1,0,,,,,,3,5
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.isLogado",,,,2,1,1,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.LoginMB.setUsuario",,,,1,1,0,,,,,,3,0
+Public Class,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB",3,78,1,22,,1,1,0,1,,14,89,0
+Public Constructor,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.RelatorioMB",,,,1,1,0,,,,,,4,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.exibirBotaoDownloadRelatorio",,,,2,1,1,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.fileDownloadView",,,,3,1,1,,,,,,13,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.gerarRelatorio",,,,3,1,1,,,,,,14,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.getDataFinal",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.getDataInicial",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.getFile",,,,3,3,1,,,,,,13,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.getTipoRelatorio",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.getUrlDonwload",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.isAdministradorLoggedIn",,,,2,1,1,,,,,,7,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.setDataFinal",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.setDataInicial",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.setTipoRelatorio",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.RelatorioMB.setUrlDonwload",,,,1,1,0,,,,,,3,0
+Public Class,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB",6,83,1,31,,2,2,0,1,,20,137,42
+Public Constructor,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.ReservaRapidaMB",,,,1,1,0,,,,,,8,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.alterarEstilo",,,,2,1,1,,,,,,8,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.ativarReserva",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.click",,,,1,1,0,,,,,,5,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.getBotoesHorario",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.getDataAtual",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.getList",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.getReserva",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.getReservado",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.getSalasDisponiveis",,,,2,1,1,,,,,,10,6
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.getSelectQtd",,,,2,1,1,,,,,,7,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.getStrHora",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.listarReservas",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.onDateSelect",,,,1,1,0,,,,,,6,5
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.reservarSala",,,,2,1,1,,,,,,11,4
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.reservarSalaLogado",,,,2,1,1,,,,,,13,18
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.setList",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.setReserva",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.setStrHora",,,,4,1,2,,,,,,13,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMB.updateBotoesAtivosPorDia",,,,4,1,2,,,,,,17,8
+Public Class,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMBTest",1,0,1,1,,0,1,0,1,,1,5,4
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.ReservaRapidaMBTest.test_getSalasDisponiveis",,,,1,1,0,,,,,,3,0
+Public Class,"br.edu.utfpr.biblioteca.salas.controller.SessionContext",1,88,1,12,,1,1,0,1,,8,37,37
+Private Constructor,"br.edu.utfpr.biblioteca.salas.controller.SessionContext.SessionContext",,,,1,1,0,,,,,,2,0
+Private Method,"br.edu.utfpr.biblioteca.salas.controller.SessionContext.currentExternalContext",,,,2,1,1,,,,,,7,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.SessionContext.encerrarSessao",,,,1,1,0,,,,,,3,3
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.SessionContext.getAttribute",,,,1,1,0,,,,,,3,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.controller.SessionContext.getInstance",,,,2,1,1,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.SessionContext.getNameUsuarioLogado",,,,2,1,0,,,,,,4,5
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.SessionContext.getUsuarioLogado",,,,1,1,0,,,,,,3,6
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.SessionContext.setAttribute",,,,1,1,0,,,,,,3,6
+Public Method,"br.edu.utfpr.biblioteca.salas.controller.SessionContext.setUsuarioLogado",,,,1,1,0,,,,,,3,5
+Package,"br.edu.utfpr.biblioteca.salas.dao",,,1,23,,1,,,,4,19,150,32
+Public Class,"br.edu.utfpr.biblioteca.salas.dao.ReservaDAOTest",9,66,1,7,,1,1,0,1,,6,44,5
+Public Constructor,"br.edu.utfpr.biblioteca.salas.dao.ReservaDAOTest.ReservaDAOTest",,,,1,1,0,,,,,,2,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.ReservaDAOTest.listar",,,,2,1,1,,,,,,9,1
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.ReservaDAOTest.reservar",,,,1,1,0,,,,,,10,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.ReservaDAOTest.test_cancelarReserva",,,,1,1,0,,,,,,7,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.ReservaDAOTest.test_getQuantidadeReservas",,,,1,1,0,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.ReservaDAOTest.test_updateReservaEmCurso",,,,1,1,0,,,,,,7,0
+Public Class,"br.edu.utfpr.biblioteca.salas.dao.SalaDAOTest",4,16,1,7,,1,1,0,1,,6,35,4
+Public Constructor,"br.edu.utfpr.biblioteca.salas.dao.SalaDAOTest.SalaDAOTest",,,,1,1,0,,,,,,2,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.SalaDAOTest.cadastrarSala",,,,2,1,1,,,,,,9,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.SalaDAOTest.test_getQuantidadeSalas",,,,1,1,0,,,,,,4,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.SalaDAOTest.test_getSalaDisponiveis",,,,1,1,0,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.SalaDAOTest.test_getStatusDaSala",,,,1,1,0,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.SalaDAOTest.test_whichSalaAreVaga",,,,1,1,0,,,,,,5,0
+Public Class,"br.edu.utfpr.biblioteca.salas.dao.StatusDAOTest",3,0,1,3,,1,1,0,1,,2,10,4
+Public Constructor,"br.edu.utfpr.biblioteca.salas.dao.StatusDAOTest.StatusDAOTest",,,,1,1,0,,,,,,2,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.StatusDAOTest.criar",,,,2,1,1,,,,,,6,0
+Public Class,"br.edu.utfpr.biblioteca.salas.dao.UsuarioDAOTest",6,60,1,6,,1,1,0,1,,5,29,3
+Public Constructor,"br.edu.utfpr.biblioteca.salas.dao.UsuarioDAOTest.UsuarioDAOTest",,,,1,1,0,,,,,,2,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.UsuarioDAOTest.cadastrar",,,,2,1,1,,,,,,9,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.UsuarioDAOTest.test_ReservaEmCurso",,,,1,1,0,,,,,,7,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.UsuarioDAOTest.test_autenticar",,,,1,1,0,,,,,,4,0
+Public Method,"br.edu.utfpr.biblioteca.salas.dao.UsuarioDAOTest.test_usuarioCadastrado",,,,1,1,0,,,,,,4,0
+Package,"br.edu.utfpr.biblioteca.salas.model",,,1,37,,1,,,,4,32,156,42
+Public Class,"br.edu.utfpr.biblioteca.salas.model.Dia",2,42,1,8,,1,1,0,1,,7,28,8
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.Dia.Dia",,,,1,1,0,,,,,,4,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Dia.addHora",,,,2,1,1,,,,,,5,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Dia.getData",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Dia.getHorario",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Dia.getStrDia",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Dia.setData",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Dia.setHorario",,,,1,1,0,,,,,,3,0
+Public Class,"br.edu.utfpr.biblioteca.salas.model.Hora",2,45,1,15,,1,2,0,1,,11,59,11
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.Hora.Hora",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Hora.addReserva",,,,2,1,1,,,,,,7,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Hora.clone",,,,1,1,0,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Hora.compareTo",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Hora.getDisableReserva",,,,2,1,1,,,,,,8,5
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Hora.getHora",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Hora.getId",,,,2,1,1,,,,,,7,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Hora.getReservas",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Hora.getStatusReserva",,,,2,1,1,,,,,,7,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Hora.setHora",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.Hora.setReservas",,,,1,1,0,,,,,,3,0
+Public Class,"br.edu.utfpr.biblioteca.salas.model.RelatorioReservas",0,62,1,10,,0,1,0,1,,10,39,4
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.RelatorioReservas.RelatorioReservas",,,,1,1,0,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.RelatorioReservas.getData",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.RelatorioReservas.getQuantidadeAlunosManha",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.RelatorioReservas.getQuantidadeAlunosNoite",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.RelatorioReservas.getQuantidadeAlunosTarde",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.RelatorioReservas.getQuantidadeAlunosTotal",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.RelatorioReservas.setData",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.RelatorioReservas.setQuantidadeAlunosManha",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.RelatorioReservas.setQuantidadeAlunosNoite",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.RelatorioReservas.setQuantidadeAlunosTarde",,,,1,1,0,,,,,,3,0
+Public Class,"br.edu.utfpr.biblioteca.salas.model.ReservasHorario",0,50,1,4,,0,1,0,1,,4,16,4
+Public Method,"br.edu.utfpr.biblioteca.salas.model.ReservasHorario.getHorario",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.ReservasHorario.getStatus",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.ReservasHorario.setHorario",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.ReservasHorario.setStatus",,,,1,1,0,,,,,,3,0
+Package,"br.edu.utfpr.biblioteca.salas.model.bo",,,2,86,,2,,,,8,14,497,199
+Public Class,"br.edu.utfpr.biblioteca.salas.model.bo.AdministradorBO",5,0,4,4,,2,1,0,1,,1,21,4
+Public Method,"br.edu.utfpr.biblioteca.salas.model.bo.AdministradorBO.gerarRelatorio",,,,4,1,2,,,,,,19,0
+Public Class,"br.edu.utfpr.biblioteca.salas.model.bo.ParserCsvBO",2,50,3,12,,2,1,0,1,,4,80,11
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.bo.ParserCsvBO.ParserCsvBO",,,,4,1,1,,,,,,22,0
+Private Method,"br.edu.utfpr.biblioteca.salas.model.bo.ParserCsvBO.getMeses",,,,3,1,2,,,,,,13,0
+Private Method,"br.edu.utfpr.biblioteca.salas.model.bo.ParserCsvBO.writeCsvReservasMensalOrAnual",,,,3,1,2,,,,,,25,0
+Private Method,"br.edu.utfpr.biblioteca.salas.model.bo.ParserCsvBO.writeCsvReservasSemana",,,,2,1,1,,,,,,16,7
+Public Class,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO",13,60,2,23,,2,1,0,1,,0,104,66
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO.descreverDia",,,,3,1,2,,,,,,20,10
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO.descreverDiaHash",,,,4,1,2,,,,,,24,9
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO.descreverMes",,,,2,1,1,,,,,,8,7
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO.fazerCheckin",,,,4,1,1,,,,,,14,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO.fazerCheckout",,,,4,1,1,,,,,,14,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO.getReservaAtiva",,,,1,1,0,,,,,,3,8
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO.getReservaAtiva",,,,1,1,0,,,,,,3,7
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO.getReservaPorId",,,,1,1,0,,,,,,3,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO.setStatus",,,,1,1,0,,,,,,4,7
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO.update",,,,2,1,1,,,,,,8,6
+Public Class,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBOTest",6,83,1,11,,1,1,0,1,,6,50,15
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBOTest.ReservaBOTest",,,,1,1,0,,,,,,2,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBOTest.testParser_writeCsvReservasSemana",,,,3,1,1,,,,,,12,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBOTest.testSomeMethod",,,,1,1,0,,,,,,8,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBOTest.testWriteCsvReservasMensal",,,,3,1,1,,,,,,13,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBOTest.test_getReservasPeriodo",,,,1,1,0,,,,,,5,8
+Public Method,"br.edu.utfpr.biblioteca.salas.model.bo.ReservaBOTest.testeChekin",,,,2,1,1,,,,,,7,0
+Public Class,"br.edu.utfpr.biblioteca.salas.model.bo.SalaBO",12,37,2,18,,2,1,0,1,,0,82,50
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.SalaBO.cancelarSala",,,,2,1,1,,,,,,5,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.SalaBO.getHorariosDisponiveis",,,,2,1,1,,,,,,8,9
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.SalaBO.getReservasHorario",,,,1,1,0,,,,,,7,7
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.SalaBO.getSalas",,,,2,1,1,,,,,,7,5
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.SalaBO.getSalasDisponiveis",,,,1,1,0,,,,,,3,7
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.SalaBO.getStatusDaSala",,,,3,1,2,,,,,,16,8
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.SalaBO.obter",,,,1,1,0,,,,,,3,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.SalaBO.reservarSala",,,,6,1,2,,,,,,27,8
+Public Class,"br.edu.utfpr.biblioteca.salas.model.bo.StatusBO",0,0,0,0,,0,1,0,1,,0,2,4
+Public Class,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBO",5,11,1,15,,1,1,0,1,,0,59,32
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBO.alreadyCadastrado",,,,1,1,0,,,,,,3,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBO.cadastrarUsuario",,,,3,3,1,,,,,,9,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBO.canDoCheckout",,,,1,1,0,,,,,,4,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBO.canDoChekin",,,,3,3,1,,,,,,18,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBO.getMyReservaNow",,,,3,1,1,,,,,,10,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBO.getReservaEmCursoHoje",,,,1,1,0,,,,,,3,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBO.isAutentico",,,,1,1,0,,,,,,3,7
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBO.isAutentico",,,,1,1,0,,,,,,3,7
+Public Static Method,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBO.obterUsuario",,,,1,1,0,,,,,,3,6
+Public Class,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBOTest",4,66,1,3,,0,1,0,1,,3,13,2
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBOTest.UsuarioBOTest",,,,1,1,0,,,,,,2,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBOTest.test_CanDoCheckout",,,,1,1,0,,,,,,4,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.bo.UsuarioBOTest.test_Data",,,,1,1,0,,,,,,4,0
+Package,"br.edu.utfpr.biblioteca.salas.model.dao",,,1,46,,2,,,,5,31,283,144
+Public Abstract Generic Class,"br.edu.utfpr.biblioteca.salas.model.dao.GenericDAO",0,28,1,9,,1,1,4,1,,7,41,4
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.dao.GenericDAO.GenericDAO",,,,1,1,0,,,,,,3,0
+TypeVariable,"br.edu.utfpr.biblioteca.salas.model.dao.GenericDAO.T",0,0,0,0,,0,1,0,1,,0,0,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.GenericDAO.delete",,,,2,1,1,,,,,,7,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.GenericDAO.insert",,,,1,1,0,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.GenericDAO.list",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.GenericDAO.obter",,,,1,1,0,,,,,,4,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.GenericDAO.obter",,,,1,1,0,,,,,,4,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.GenericDAO.update",,,,2,1,1,,,,,,10,0
+Public Class,"br.edu.utfpr.biblioteca.salas.model.dao.ReservaDAO",4,0,1,13,,2,2,0,2,,9,75,54
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.dao.ReservaDAO.ReservaDAO",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.ReservaDAO.delete",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.ReservaDAO.getQuantidadeReservas",,,,2,1,1,,,,,,11,7
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.ReservaDAO.getReservasPeriodo",,,,1,1,0,,,,,,6,8
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.ReservaDAO.haveReservaByDateIdsalaUsuario",,,,1,1,0,,,,,,10,9
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.ReservaDAO.insert",,,,3,3,2,,,,,,13,7
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.ReservaDAO.isReservado",,,,2,1,1,,,,,,12,8
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.ReservaDAO.listByDateTime",,,,1,1,0,,,,,,7,7
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.ReservaDAO.listByDateTimeAndSala",,,,1,1,0,,,,,,6,8
+Public Class,"br.edu.utfpr.biblioteca.salas.model.dao.SalaDAO",3,0,1,13,,2,1,0,2,,8,76,52
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.dao.SalaDAO.SalaDAO",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.SalaDAO.getHorarioIsDisponivelHash",,,,3,1,2,,,,,,16,13
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.SalaDAO.getQuantidadeSalas",,,,2,1,1,,,,,,10,5
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.SalaDAO.getSalasDisponiveis",,,,2,1,1,,,,,,14,8
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.SalaDAO.getWhichSalasAreVagas",,,,1,1,0,,,,,,7,7
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.SalaDAO.isAnyoneSalaVaga",,,,1,1,0,,,,,,7,7
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.SalaDAO.isDisponivel",,,,2,1,1,,,,,,12,7
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.SalaDAO.list",,,,1,1,0,,,,,,3,5
+Public Class,"br.edu.utfpr.biblioteca.salas.model.dao.StatusDAO",1,0,1,2,,0,1,0,2,,2,9,4
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.dao.StatusDAO.StatusDAO",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.StatusDAO.obter",,,,1,1,0,,,,,,4,0
+Public Class,"br.edu.utfpr.biblioteca.salas.model.dao.UsuarioDAO",4,0,1,9,,2,1,0,2,,5,46,20
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.dao.UsuarioDAO.UsuarioDAO",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.UsuarioDAO.getReservaEmCurso",,,,2,1,1,,,,,,16,7
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.UsuarioDAO.getReservaInTime",,,,2,1,1,,,,,,12,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.UsuarioDAO.isAutentico",,,,3,3,2,,,,,,9,7
+Public Method,"br.edu.utfpr.biblioteca.salas.model.dao.UsuarioDAO.obter",,,,1,1,0,,,,,,4,6
+Package,"br.edu.utfpr.biblioteca.salas.model.entity",,,1,92,,2,,,,4,70,503,46
+Public Class,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO",6,84,1,38,,1,2,0,1,,29,178,1
+Protected Constructor,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.ReservaPO",,,,1,1,0,,,,,,2,0
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.ReservaPO",,,,3,1,1,,,,,,17,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.canReservar",,,,1,1,0,,,,,,13,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.clone",,,,1,1,0,,,,,,11,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.equals",,,,3,3,1,,,,,,10,1
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.getDataFinal",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.getDataInicial",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.getDiaMesReserva",,,,1,1,0,,,,,,5,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.getId",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.getQuantidadeAlunos",,,,2,1,1,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.getReservaPeriodo",,,,3,3,1,,,,,,12,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.getSala",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.getStatus",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.getStrDataFinal",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.getStrDataInicial",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.getStrId",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.getUsuario",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.hashCode",,,,2,1,0,,,,,,5,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.isLivre",,,,2,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.setDataFinal",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.setDataInicial",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.setId",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.setQuantidadeAlunos",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.setSala",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.setStatus",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.setStrDataFinal",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.setStrDataInicial",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.setUsuario",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO.toString",,,,1,1,0,,,,,,3,0
+Public Class,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO",0,64,1,16,,1,2,0,1,,13,64,5
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.SalaPO",,,,1,1,0,,,,,,4,0
+Protected Constructor,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.SalaPO",,,,1,1,0,,,,,,2,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.clone",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.equals",,,,3,3,1,,,,,,10,1
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.getId",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.getReservas",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.hasAr",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.hasAr",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.hashCode",,,,2,1,0,,,,,,5,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.setId",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.setId",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.setReservas",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.SalaPO.toString",,,,1,1,0,,,,,,3,0
+Public Class,"br.edu.utfpr.biblioteca.salas.model.entity.StatusPO",0,55,1,12,,1,2,0,1,,9,49,5
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.entity.StatusPO.StatusPO",,,,1,1,0,,,,,,3,0
+Protected Constructor,"br.edu.utfpr.biblioteca.salas.model.entity.StatusPO.StatusPO",,,,1,1,0,,,,,,2,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.StatusPO.equals",,,,3,3,1,,,,,,10,1
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.StatusPO.getName",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.StatusPO.getReservas",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.StatusPO.hashCode",,,,2,1,0,,,,,,5,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.StatusPO.setName",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.StatusPO.setReservas",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.StatusPO.toString",,,,1,1,0,,,,,,3,0
+Public Class,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO",0,83,1,26,,2,2,0,1,,19,125,20
+Protected Constructor,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.UsuarioPO",,,,1,1,0,,,,,,2,0
+Public Constructor,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.UsuarioPO",,,,1,1,0,,,,,,6,0
+Private Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.convertStringToMd5",,,,4,1,2,,,,,,21,7
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.equals",,,,3,3,1,,,,,,10,1
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.getEmail",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.getNome",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.getQuantidadeReservas",,,,2,1,1,,,,,,7,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.getRa",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.getReservas",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.getSenha",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.hashCode",,,,2,1,0,,,,,,5,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.isAdministrador",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.setAdministrador",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.setEmail",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.setNome",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.setRa",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.setReservas",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.setSenha",,,,1,1,0,,,,,,4,0
+Public Method,"br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO.toString",,,,1,1,0,,,,,,3,0
+Package,"br.edu.utfpr.biblioteca.salas.tools",,,1,34,,2,,,,2,0,217,175
+Public Class,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper",0,0,1,31,,1,1,0,1,,0,190,154
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.addHora",,,,1,1,0,,,,,,6,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getCalendario",,,,5,1,1,,,,,,41,17
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getData",,,,1,1,0,,,,,,5,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getDataToDataBase",,,,1,1,0,,,,,,5,7
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getDateComHoraSete",,,,2,1,1,,,,,,7,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getDateComHoraVinteUma",,,,2,1,1,,,,,,7,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getDiaMes",,,,1,1,0,,,,,,5,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getDiaMesAno",,,,1,1,0,,,,,,5,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getHora",,,,1,1,0,,,,,,5,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getHoraCheia",,,,1,1,0,,,,,,8,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getHorarios",,,,2,1,1,,,,,,14,8
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getMesAno",,,,1,1,0,,,,,,4,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getMinutes",,,,1,1,0,,,,,,5,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.getNomeMes",,,,1,1,0,,,,,,4,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.lessHora",,,,1,1,0,,,,,,6,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.mergeDiaHora",,,,1,1,0,,,,,,6,7
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.mesAnterior",,,,1,1,0,,,,,,6,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.mesPosterior",,,,1,1,0,,,,,,6,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.parseDate",,,,3,1,1,,,,,,14,9
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.parseDateDate",,,,1,1,0,,,,,,12,6
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.setHoraMinutosSegundos",,,,1,1,0,,,,,,8,0
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper.setMinute",,,,1,1,0,,,,,,9,0
+Public Class,"br.edu.utfpr.biblioteca.salas.tools.HashMapHelper",2,0,3,3,,2,1,0,1,,0,13,11
+Public Static Method,"br.edu.utfpr.biblioteca.salas.tools.HashMapHelper.clone",,,,3,1,2,,,,,,11,7
+Package,"br.edu.utfpr.biblioteca.salas.view",,,1,22,,2,,,,2,12,112,21
+Public Class,"br.edu.utfpr.biblioteca.salas.view.BotaoHorario",0,72,1,15,,1,3,0,1,,9,60,5
+Public Constructor,"br.edu.utfpr.biblioteca.salas.view.BotaoHorario.BotaoHorario",,,,1,1,0,,,,,,6,0
+Public Method,"br.edu.utfpr.biblioteca.salas.view.BotaoHorario.compareTo",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.view.BotaoHorario.getClasse",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.view.BotaoHorario.getHora",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.view.BotaoHorario.getHoraStr",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.view.BotaoHorario.getValue",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.view.BotaoHorario.isDisabled",,,,1,1,0,,,,,,3,0
+Public Method,"br.edu.utfpr.biblioteca.salas.view.BotaoHorario.setClasse",,,,4,1,1,,,,,,11,0
+Public Method,"br.edu.utfpr.biblioteca.salas.view.BotaoHorario.setValue",,,,4,1,1,,,,,,18,0
+Public Class,"br.edu.utfpr.biblioteca.salas.view.StatusBotao",0,38,2,7,,2,2,0,1,,3,44,6
+Public Constructor,"br.edu.utfpr.biblioteca.salas.view.StatusBotao.StatusBotao",,,,1,1,0,,,,,,9,0
+Public Method,"br.edu.utfpr.biblioteca.salas.view.StatusBotao.getParametro",,,,2,1,1,,,,,,9,0
+Public Method,"br.edu.utfpr.biblioteca.salas.view.StatusBotao.setParametrosBotoes",,,,4,1,2,,,,,,17,0
+File,"context.xml",,,0,0,0,0,,,,0,,2,0
+File,"csspage.css",,,0,0,0,0,,,,0,,0,0
+File,"data_base_inserts.sql",,,0,0,,0,,,,0,,0,0
+File,"nb-configuration.xml",,,0,0,0,0,,,,0,,9,12
+File,"nbactions.xml",,,0,0,0,0,,,,0,,50,0
+File,"normalize.css",,,0,0,0,0,,,,0,,0,0
+File,"persistence.xml",,,0,0,0,0,,,,0,,17,0
+File,"persistence.xml",,,0,0,0,0,,,,0,,17,0
+File,"pom.xml",,,0,0,0,0,,,,0,,156,7
+File,"style.css",,,0,0,0,0,,,,0,,0,0
+File,"termoDeUso.css",,,0,0,0,0,,,,0,,0,0
+File,"web.xml",,,0,0,0,0,,,,0,,44,7
