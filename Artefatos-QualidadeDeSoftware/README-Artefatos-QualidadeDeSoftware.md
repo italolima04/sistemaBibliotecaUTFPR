@@ -1,1 +1,1 @@
-Explicação sobre os artefatos.
+O último e principal trabalho da disciplina visava refatorar um projeto existente, retirando o máximo de code smells identificados, sendo estes identificados com o auxílio de ferramentas para desenvolvimento da linguagem Java, como o Jspirit, Identificando quais os arquivos que continham code smells e qual dos tipos era. E também a ferramenta Understand, que rodava todos os arquivos do projeto, identificando o número total de cada tipo de code smells.
