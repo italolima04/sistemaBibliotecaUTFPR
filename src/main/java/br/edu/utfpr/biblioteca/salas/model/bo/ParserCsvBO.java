@@ -28,11 +28,13 @@ public class ParserCsvBO {
 
     private String filePath;
     private List<RelatorioReservas> relatorioReservas;
+    private BufferedWriter writeFile ;
 
     public ParserCsvBO(int tipoRelatorio, List<RelatorioReservas> relatorioReservas) throws Exception {
         String path = "";
         this.relatorioReservas = relatorioReservas;
         ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+  	  	this.writeFile = new BufferedWriter(new FileWriter(new File(filePath)));
         switch (tipoRelatorio) {
             case 1:
                 path = servletContext.getRealPath("") + "resources/relatorios/RelatorioSemanal.csv";
@@ -60,50 +62,48 @@ public class ParserCsvBO {
     }
 
     private void writeCsvReservasSemana(List<RelatorioReservas> relatorioReservas) throws Exception {
-        BufferedWriter writeFile = new BufferedWriter(new FileWriter(new File(filePath)));
         writeFile();
         for (RelatorioReservas relatorio : relatorioReservas) {
-            writeFile.write(CalendarioHelper.getDiaMesAno(relatorio.getData()) + ",");
-            writeFile.write(relatorio.getQuantidadeAlunosManha() + ",");
-            writeFile.write(relatorio.getQuantidadeAlunosTarde() + ",");
-            writeFile.write(relatorio.getQuantidadeAlunosNoite() + ",");
-            writeFile.write(relatorio.getQuantidadeAlunosTotal() + ",");
-            writeFile.newLine();
+        	this.writeFile.write(CalendarioHelper.getDiaMesAno(relatorio.getData()) + ",");
+        	this.writeFile.write(relatorio.getQuantidadeAlunosManha() + ",");
+        	this.writeFile.write(relatorio.getQuantidadeAlunosTarde() + ",");
+        	this.writeFile.write(relatorio.getQuantidadeAlunosNoite() + ",");
+        	this.writeFile.write(relatorio.getQuantidadeAlunosTotal() + ",");
+        	this.writeFile.newLine();
         }
         writeFile.close();
     }
 
     public void writeFile() throws IOException {
-    	  BufferedWriter writeFile = new BufferedWriter(new FileWriter(new File(filePath)));
-          writeFile.write("ESTATÍSTICA DO USO DAS SALAS DE ESTUDO");
-          writeFile.newLine();
-          writeFile.write("Mês, Manhã, Tarde, Noite, Total,");
-          writeFile.newLine();
+          writeFile();
+          this.writeFile.write("ESTATÍSTICA DO USO DAS SALAS DE ESTUDO");
+          this.writeFile.newLine();
+          this.writeFile.write("Mês, Manhã, Tarde, Noite, Total,");
+          this.writeFile.newLine();
     }
 
     public void writeFileQtdAlunos(BufferedWriter writeFile, int quantidadeAlunosManha, int quantidadeAlunosTarde,int quantidadeAlunosNoite) throws IOException {
-    	writeFile.write(quantidadeAlunosManha + ",");
-        writeFile.write(quantidadeAlunosTarde + ",");
-        writeFile.write(quantidadeAlunosNoite + ",");
-        writeFile.write((quantidadeAlunosManha + quantidadeAlunosTarde + quantidadeAlunosNoite) + ",");
-        writeFile.newLine();
+        writeFile();
+    	this.writeFile.write(quantidadeAlunosManha + ",");
+    	this.writeFile.write(quantidadeAlunosTarde + ",");
+    	this.writeFile.write(quantidadeAlunosNoite + ",");
+    	this.writeFile.write((quantidadeAlunosManha + quantidadeAlunosTarde + quantidadeAlunosNoite) + ",");
+        this.writeFile.newLine();
     }
 
 
 
     private void writeCsvReservasMensalOrAnual(List<RelatorioReservas> relatorioReservas) throws Exception {
-    	writeFile();
-  	  	BufferedWriter writeFile = new BufferedWriter(new FileWriter(new File(filePath)));
         HashMap<String, List<RelatorioReservas>> relatorioByMes = getMeses(relatorioReservas);
         for (Map.Entry<String, List<RelatorioReservas>> meses : relatorioByMes.entrySet()) {
-            writeFile.write(meses.getKey() + ",");
+            this.writeFile.write(meses.getKey() + ",");
             int quantidadeAlunosManha = 0;
             int quantidadeAlunosTarde = 0;
             int quantidadeAlunosNoite = 0;
             for (RelatorioReservas relatorio : meses.getValue()) {
             	relatorio.incrementarAlunos(quantidadeAlunosManha, quantidadeAlunosTarde, quantidadeAlunosNoite);
             }
-            writeFileQtdAlunos(writeFile, quantidadeAlunosManha, quantidadeAlunosTarde, quantidadeAlunosNoite);
+            writeFileQtdAlunos(this.writeFile, quantidadeAlunosManha, quantidadeAlunosTarde, quantidadeAlunosNoite);
 
         }
         writeFile.close();

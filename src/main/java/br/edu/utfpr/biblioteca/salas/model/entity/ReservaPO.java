@@ -78,7 +78,8 @@ public class ReservaPO implements Serializable {
         this.sala = sala;
         this.dataInicial = dataInicial;
         if (dataInicial != null) {
-            this.dataFinal = CalendarioHelper.addHora(this.dataInicial);
+        	CalendarioHelper cp = new CalendarioHelper();
+            this.dataFinal = cp.addHora(this.dataInicial);
         } else {
             this.dataFinal = new Date();
         }

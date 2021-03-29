@@ -187,7 +187,8 @@ public class LoginMB {
             } else {
                 this.usuario = this.getUsuarioLogado();
             }
-            ReservaBO.fazerCheckin(usuario);
+        	ReservaBO rb = new ReservaBO();
+        	rb.fazerCheckin(usuario);
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Checkin efetuado!", null);
         } catch (Exception ex) {
             message = new FacesMessage(FacesMessage.SEVERITY_ERROR, ex.getMessage(), null);
@@ -197,9 +198,10 @@ public class LoginMB {
     }
 
     public boolean exibirBotaoCheckin() {
+    	UsuarioBO ub = new UsuarioBO();
         if (this.getUsuarioLogado() == null) {
             return true;
-        } else if (UsuarioBO.canDoChekin(this.getUsuarioLogado())) {
+        } else if (ub.canDoChekin(this.getUsuarioLogado())) {
             return true;
         }
         return false;

@@ -11,6 +11,7 @@ import javax.faces.context.FacesContext;
 public class SessionContext {
 
     private static SessionContext instance;
+    private FacesContext faces;
 
     //Padrão de projeto singleton, só permite uma única instância por usuário
     public static SessionContext getInstance() {
@@ -27,10 +28,10 @@ public class SessionContext {
 
     //Retorna a instância corrente, se não existir uma retorna null
     private ExternalContext currentExternalContext() {
-        if (FacesContext.getCurrentInstance() == null) {
+        if (this.faces.getCurrentInstance() == null) {
             return null;
         } else {
-            return FacesContext.getCurrentInstance().getExternalContext();
+            return this.faces.getCurrentInstance().getExternalContext();
         }
     }
 
@@ -63,7 +64,7 @@ public class SessionContext {
     public void setUsuarioLogado(UsuarioPO usuario) {
         setAttribute("usuarioLogado", usuario);
     }
-    
+
 
     /**
      * Invalida a sessão

@@ -15,7 +15,11 @@ import java.util.Map;
  * @author romulo
  */
 public class HashMapHelper {
+	public HashMap<SalaPO, ReservaPO> copy;
 
+	public HashMapHelper() {
+        HashMap<SalaPO, ReservaPO> copy = new HashMap<SalaPO, ReservaPO>();
+	}
     /**
      * Clona um HashMap<SalaPO, ReservaPO> clonando devidamente os objetos
      * relacionados.
@@ -24,16 +28,15 @@ public class HashMapHelper {
      * @return
      */
 
-    public static HashMap<SalaPO, ReservaPO> clone(HashMap<SalaPO, ReservaPO> map) {
-        HashMap<SalaPO, ReservaPO> copy = new HashMap();
+    public HashMap<SalaPO, ReservaPO> clone(HashMap<SalaPO, ReservaPO> map) {
 
         for (Map.Entry<SalaPO, ReservaPO> entry : map.entrySet()) {
             try {
-                copy.put((SalaPO) entry.getKey().clone(), (ReservaPO) entry.getValue().clone());
+                this.copy.put((SalaPO) entry.getKey().clone(), (ReservaPO) entry.getValue().clone());
             } catch (NullPointerException ex) {
-                copy.put((SalaPO) entry.getKey().clone(), null);
+                this.copy.put((SalaPO) entry.getKey().clone(), null);
             }
         }
-        return copy;
+        return this.copy;
     }
 }

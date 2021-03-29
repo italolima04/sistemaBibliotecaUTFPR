@@ -146,19 +146,17 @@ public class CalendarioHelper{
      * @param date
      * @return
      */
-    public static List<Date> getHorarios(Date date) {
+    public List<Date> getHorarios(Date date) {
         List<Date> horarios = new ArrayList();
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        calendar.set(Calendar.HOUR_OF_DAY, 0); // ! clear would not reset the hour of day !
-        calendar.clear(Calendar.MINUTE);
-        calendar.clear(Calendar.SECOND);
-        calendar.clear(Calendar.MILLISECOND);
+        this.calendarioClasse.setTime(date);
+        this.calendarioClasse.set(Calendar.HOUR_OF_DAY, 0); // ! clear would not reset the hour of day !
+        this.calendarioClasse.clear(Calendar.MINUTE);
+        this.calendarioClasse.clear(Calendar.SECOND);
+        this.calendarioClasse.clear(Calendar.MILLISECOND);
 
         for (int i = 8; i <= 21; i++) {
-        	calendar.set(Calendar.HOUR_OF_DAY, i);
-            horarios.add((Date) calendar.getTime().clone());
+        	this.calendarioClasse.set(Calendar.HOUR_OF_DAY, i);
+            horarios.add((Date) this.calendarioClasse.getTime().clone());
         }
 
         return horarios;
@@ -231,7 +229,7 @@ public class CalendarioHelper{
      * @param date
      * @return String(dd/MM/yyyy HH:mm:ss)
      */
-    public static String getData(Date date) {
+    public String getData(Date date) {
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
         String reportDate = df.format(date);
@@ -301,18 +299,16 @@ public class CalendarioHelper{
      * @param date
      * @return uma data com hora acrescida em uma unidade
      */
-    public static Date addHora(Date date) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-    	calendar.add(Calendar.HOUR_OF_DAY, 1);
-        return calendar.getTime();
+    public Date addHora(Date date) {
+    	this.calendarioClasse.setTime(date);
+        this.calendarioClasse.add(Calendar.HOUR_OF_DAY, 1);
+        return this.calendarioClasse.getTime();
     }
 
-    public static Date lessHora(Date date) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        calendar.add(Calendar.HOUR_OF_DAY, -1);
-        return calendar.getTime();
+    public Date lessHora(Date date) {
+        this.calendarioClasse.setTime(date);
+        this.calendarioClasse.add(Calendar.HOUR_OF_DAY, -1);
+        return this.calendarioClasse.getTime();
     }
 
     /**
@@ -368,7 +364,7 @@ public class CalendarioHelper{
     public Date getDateComHoraSete(Date date) {
         int hora = Integer.parseInt(CalendarioHelper.getHora(date).substring(0, 2));
         for (int i = hora; i >= 7; i--) {
-            date = CalendarioHelper.lessHora(date);
+            date = this.lessHora(date);
         }
         return date;
     }
@@ -376,7 +372,7 @@ public class CalendarioHelper{
     public Date getDateComHoraVinteUma(Date date) {
         int hora = Integer.parseInt(CalendarioHelper.getHora(date).substring(0, 2));
         for (int i = hora; i <= 21; i++) {
-            date = CalendarioHelper.addHora(date);
+            date = this.addHora(date);
         }
         return date;
     }
@@ -387,13 +383,13 @@ public class CalendarioHelper{
         return this.calendarioClasse.get(Calendar.MINUTE);
     }
 
-    public static Date getHoraCheia(Date date) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        calendar.clear(Calendar.MINUTE);
-        calendar.clear(Calendar.SECOND);
-        calendar.clear(Calendar.MILLISECOND);
-        return calendar.getTime();
+    public Date getHoraCheia(Date date) {
+
+    	this.calendarioClasse.setTime(date);
+    	this.calendarioClasse.clear(Calendar.MINUTE);
+    	this.calendarioClasse.clear(Calendar.SECOND);
+    	this.calendarioClasse.clear(Calendar.MILLISECOND);
+        return this.calendarioClasse.getTime();
     }
 
     public Date setMinute(Date date, int minute) {

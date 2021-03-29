@@ -30,7 +30,8 @@ public class AdministradorMBTest {
     }
 
     public void teste() {
-        reservas = ReservaBO.getReservaAtiva(new Date(), 1);
+    	ReservaBO rb = new ReservaBO();
+        reservas = rb.getReservaAtiva(new Date(), 1);
         if (reservas == null) {
             System.out.println("Reservas é null");
         }

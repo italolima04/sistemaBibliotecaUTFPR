@@ -16,9 +16,9 @@ import javax.persistence.Persistence;
 public abstract class GenericDAO<T> {
 
     public static EntityManager entityManager = Persistence.createEntityManagerFactory("UP").createEntityManager();
-    private Class clazz;
+    private Class<?> clazz;
 
-    public GenericDAO(Class clazz) {
+    public GenericDAO(Class<?> clazz) {
         this.clazz = clazz;
     }
 

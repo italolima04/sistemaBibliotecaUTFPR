@@ -59,25 +59,6 @@ public class ExibirReservaMB {
 
     }
 
-    public String canCancelReserva() {
-        if (reserva.getUsuario().getRa().equals(usuario.getRa()) || usuario.getRa().equals("admin")) {
-            return "true";
-        }
-        return "false";
-    }
-
-    public void cancelarReserva() {
-        FacesMessage msg;
-        if(canCancelReserva().equals("false")){
-            msg = new FacesMessage(FacesMessage.SEVERITY_WARN, "Essa reserva não é sua!", getReserva().getStrDataInicial());
-        }else if (ReservaBO.setStatus(reserva, "inativa")) {
-            msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Reserva Cancelada", getReserva().getStrDataInicial());
-        } else {
-            msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Reserva não pôde ser cancelada!", getReserva().getStrDataInicial());
-        }
-        FacesContext.getCurrentInstance().addMessage(null, msg);
-    }
-
     public int getIdReserva() {
         return idReserva;
     }
@@ -85,7 +66,8 @@ public class ExibirReservaMB {
     public void setIdReserva(int idReserva) {
         this.idReserva = idReserva;
         if (idReserva != -1) {
-            reserva = ReservaBO.getReservaPorId(idReserva);
+        	ReservaBO rb = new ReservaBO();
+            reserva = rb.getReservaPorId(idReserva);
             setHora(CalendarioHelper.getHora(reserva.getDataInicial()));
         }
     }

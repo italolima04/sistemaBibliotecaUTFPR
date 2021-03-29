@@ -18,8 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class LoginFilter implements Filter {
+	public UsuarioPO usuario;
 
-    @Override
+    public LoginFilter() {
+    	this.usuario = null;
+    }
+
     public void destroy() {
         // TODO Auto-generated method stub
 
@@ -39,14 +43,13 @@ public class LoginFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain) throws IOException, ServletException {
-        UsuarioPO usuario = null;
         HttpSession sess = ((HttpServletRequest) request).getSession(false);
 
         if (sess != null) {
-            usuario = (UsuarioPO) sess.getAttribute("usuarioLogado");
+            this.usuario = (UsuarioPO) sess.getAttribute("usuarioLogado");
         }
 
-        if (usuario == null) {
+        if (this.usuario == null) {
             String contextPath = ((HttpServletRequest) request).getContextPath();
 
             ((HttpServletResponse) response).sendRedirect(contextPath + "/faces/index.xhtml");

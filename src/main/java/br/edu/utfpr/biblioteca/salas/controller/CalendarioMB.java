@@ -110,7 +110,8 @@ public class CalendarioMB {
      * @return
      */
     public List<Dia> getMes(Date date) {
-        return ReservaBO.descreverMes(date);
+    	ReservaBO rb = new ReservaBO();
+        return rb.descreverMes(date);
     }
 
     /**

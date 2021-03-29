@@ -7,8 +7,7 @@ import br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper;
 import java.util.Date;
 
 public class UsuarioBO {
-	private static CalendarioHelper calendario;
-
+	private CalendarioHelper calendario;
     static UsuarioDAO usuarioDAO = new UsuarioDAO();
 
     /**
@@ -69,33 +68,32 @@ public class UsuarioBO {
         usuarioDAO.insert(usuario);
     }
 
-    public static boolean canDoChekin(UsuarioPO usuario) {
+    public boolean canDoChekin(UsuarioPO usuario) {
         Date fifteenBefore;
         Date fifteenAfter;
         Date horaAtual = new Date();
         int minutos = getCalendario().getMinutes(horaAtual);
         if (minutos <= 15) {
-            horaAtual = CalendarioHelper.getHoraCheia(horaAtual);
+            horaAtual = this.calendario.getHoraCheia(horaAtual);
         } else if (minutos >= 45) {
-            horaAtual = CalendarioHelper.getHoraCheia(CalendarioHelper.addHora(horaAtual));
+            horaAtual = this.calendario.getHoraCheia(this.calendario.addHora(horaAtual));
         } else {
             return false;
         }
-        fifteenBefore = calendario.lessHora(horaAtual);
-        calendario.setMinute(fifteenBefore, 45);
+        fifteenBefore = this.calendario.lessHora(horaAtual);
+        this.calendario.setMinute(fifteenBefore, 45);
         fifteenAfter = (Date) horaAtual.clone();
-        calendario.setMinute(fifteenAfter, 15);
+        this.calendario.setMinute(fifteenAfter, 15);
         return usuarioDAO.getReservaInTime(usuario, horaAtual) != null;
     }
 
-    public static ReservaPO getMyReservaNow(UsuarioPO usuario) {
-    	CalendarioHelper calendario = new CalendarioHelper();
+    public ReservaPO getMyReservaNow(UsuarioPO usuario) {
         Date horaAtual = new Date();
-        int minutos = calendario.getMinutes(horaAtual);
+        int minutos = this.calendario.getMinutes(horaAtual);
         if (minutos <= 15) {
-            horaAtual = calendario.getHoraCheia(horaAtual);
+            horaAtual = this.calendario.getHoraCheia(horaAtual);
         } else if (minutos >= 45) {
-            horaAtual = calendario.getHoraCheia(calendario.addHora(horaAtual));
+            horaAtual = this.calendario.getHoraCheia(this.calendario.addHora(horaAtual));
         }
         return usuarioDAO.getReservaInTime(usuario, horaAtual);
     }
@@ -111,8 +109,8 @@ public class UsuarioBO {
         return usuarioDAO.getReservaEmCurso(usuario, data) != null;
     }
 
-	public static CalendarioHelper getCalendario() {
-		return calendario;
+	public CalendarioHelper getCalendario() {
+		return this.calendario;
 	}
 
 	public void setCalendario(CalendarioHelper calendario) {

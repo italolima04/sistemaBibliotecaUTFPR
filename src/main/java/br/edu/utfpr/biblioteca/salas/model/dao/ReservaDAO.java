@@ -5,8 +5,6 @@ import br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO;
 import br.edu.utfpr.biblioteca.salas.model.entity.StatusPO;
 import br.edu.utfpr.biblioteca.salas.tools.CalendarioHelper;
 
-import static br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO.reservaDAO;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -21,10 +19,9 @@ public class ReservaDAO<R> implements Serializable {
 	 private static EntityManager entityManager = Persistence.createEntityManagerFactory("UP").createEntityManager();
 	 private Query queryInterna;
 	 private Class clazz;
-
-    public ReservaDAO() {
+	 private ReservaPO reserva;
+     public ReservaDAO() {
         //super(ReservaPO.class);
-
     }
 
     /**
@@ -164,14 +161,14 @@ public class ReservaDAO<R> implements Serializable {
     }
 
 
-    public void metodoNovo (boolean variavel, UsuarioPO usuario, ReservaPO reserva) throws Exception {
-   	 if (this.isReservado(reserva)) {
+    public void metodoNovo (boolean variavel, UsuarioPO usuario) throws Exception {
+   	 if (this.isReservado(this.reserva)) {
             throw new Exception("Sala já reservada");
         } else {
        	 if (variavel) {
-       		this.insert(reserva);
+       		this.insert(this.reserva);
        	 } else {
-                if (this.haveReservaByDateIdsalaUsuario(reserva.getDataInicial(), reserva.getSala().getId(), reserva.getUsuario())) {
+                if (this.haveReservaByDateIdsalaUsuario(this.reserva.getDataInicial(), reserva.getSala().getId(), this.reserva.getUsuario())) {
                     throw new Exception("Você já possui uma reserva nesse horário em outra sala!");
                 }
 
@@ -205,5 +202,10 @@ public class ReservaDAO<R> implements Serializable {
 
 	public static void setEntityManager(EntityManager entityManager) {
 		ReservaDAO.entityManager = entityManager;
+	}
+
+	public List<ReservaPO> list() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

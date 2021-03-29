@@ -19,7 +19,8 @@ import java.util.Collections;
 
 public class ReservaBO {
 	private static CalendarioHelper calendario;
-    public static ReservaDAO reservaDAO = new ReservaDAO();
+	private ReservaDAO reservaDAO = new ReservaDAO();
+    private Hora horario;
 
     /**
      * Método que invoca o DAO para obter as reservas de um determinado dia-hora
@@ -29,8 +30,8 @@ public class ReservaBO {
      * @param idSala int
      * @return lista de reservas
      */
-    public static List<ReservaPO> getReservaAtiva(Date data, int idSala) {
-        return reservaDAO.listByDateTimeAndSala(data, idSala);
+    public List<ReservaPO> getReservaAtiva(Date data, int idSala) {
+        return this.reservaDAO.listByDateTimeAndSala(data, idSala);
     }
 
     /**
@@ -40,8 +41,8 @@ public class ReservaBO {
      * @param sala
      * @return lista de reservas
      */
-    public static List<ReservaPO> getReservaAtiva(Date data, SalaPO sala) {
-        return getReservaAtiva(data, sala.getId());
+    public List<ReservaPO> getReservaAtiva(Date data, SalaPO sala) {
+        return this.getReservaAtiva(data, sala.getId());
     }
 
     /**
@@ -57,8 +58,8 @@ public class ReservaBO {
 
     public static List<Date> retornaHorarios(Date date) {
         List<Date> horarios;
-
-        horarios = CalendarioHelper.getHorarios(date);
+        CalendarioHelper ch = new CalendarioHelper();
+        horarios = ch.getHorarios(date);
         return horarios;
     }
 
@@ -71,7 +72,7 @@ public class ReservaBO {
     }
 
 
-    public static HashMap<Date, HashMap<SalaPO, ReservaPO>> descreverDiaHash(Date date) {
+    public HashMap<Date, HashMap<SalaPO, ReservaPO>> descreverDiaHash(Date date) {
         HashMap<SalaPO, ReservaPO> salaTemReservas;
         HashMap<Date, HashMap<SalaPO, ReservaPO>> dataTemReservas;
         List<ReservaPO> reservas;
@@ -84,8 +85,9 @@ public class ReservaBO {
         }
 
         for (Date horario : retornaHorarios(date)) {
-            reservas = reservaDAO.listByDateTime(horario);
-            dataTemReservas.put(horario, HashMapHelper.clone(salaTemReservas));
+            reservas = this.reservaDAO.listByDateTime(horario);
+            HashMapHelper hash = new HashMapHelper();
+            dataTemReservas.put(horario, hash.clone(salaTemReservas));
 
             for (ReservaPO reserva : reservas) {
                 dataTemReservas.get(reserva.getDataInicial()).put(reserva.getSala(), reserva);
@@ -106,24 +108,23 @@ public class ReservaBO {
      */
 
 
-    public static void descreverHorario(Dia dia, Date date) {
-        Hora horario;
+    public void descreverHorario(Dia dia, Date date) {
         HashMap<Date, HashMap<SalaPO, ReservaPO>> dataTemReservas = descreverDiaHash(date);
         for (Map.Entry<Date, HashMap<SalaPO, ReservaPO>> horaTemReserva : dataTemReservas.entrySet()) {
             Date hora = horaTemReserva.getKey();
             HashMap<SalaPO, ReservaPO> salaTemReservas = horaTemReserva.getValue();
-            horario = new Hora(hora);
+            this.horario = new Hora(hora);
             for (Map.Entry<SalaPO, ReservaPO> salaTemReserva : salaTemReservas.entrySet()) {
                 ReservaPO reserva = salaTemReserva.getValue();
-                horario.addReserva(reserva);
+                this.horario.addReserva(reserva);
             }
-            dia.addHora(horario);
+            dia.addHora(this.horario);
         }
     }
-    public static Dia descreverDia(Date date) {
+    public Dia descreverDia(Date date) {
         Dia dia = new Dia();
         dia.setData(date);
-        descreverHorario(dia, date);
+        this.descreverHorario(dia, date);
         Collections.sort(dia.getHorario());
         return dia;
     }
@@ -135,11 +136,11 @@ public class ReservaBO {
      * @param date
      * @return
      */
-    public static List<Dia> descreverMes(Date date) {
+    public List<Dia> descreverMes(Date date) {
         List<Date> dias = calendario.getCalendario(date);
         List<Dia> mes = new ArrayList<>();
         for (Date dia : dias) {
-            mes.add(descreverDia(dia));
+            mes.add(this.descreverDia(dia));
         }
         return mes;
     }
@@ -150,10 +151,11 @@ public class ReservaBO {
      * @param reservaAnterior
      * @param atualizarPara
      */
-    public static void update(ReservaPO reservaAnterior, ReservaPO atualizarPara) throws Exception {
-        try {
-            SalaBO.reservarSala(atualizarPara);
-            SalaBO.cancelarSala(reservaAnterior);
+    public void update(ReservaPO reservaAnterior, ReservaPO atualizarPara) throws Exception {
+    	SalaBO sala = new SalaBO();
+    	try {
+    		sala.reservarSala(atualizarPara);
+    		sala.cancelarSala(reservaAnterior);
         } catch (Exception ex) {
             throw new Exception("Impossível atualizar reserva!");
         }
@@ -166,9 +168,9 @@ public class ReservaBO {
      * @param newStatus
      * @return boolean
      */
-    public static boolean setStatus(ReservaPO reserva, String newStatus) {
+    public boolean setStatus(ReservaPO reserva, String newStatus) {
         reserva.setStatus(new StatusPO(newStatus));
-        return reservaDAO.update(reserva);
+        return this.reservaDAO.update(reserva);
     }
 
 
@@ -178,8 +180,8 @@ public class ReservaBO {
      * @param index
      * @return ReservaPO
      */
-    public static ReservaPO getReservaPorId(int index) {
-        return (ReservaPO) reservaDAO.obter(index);
+    public ReservaPO getReservaPorId(int index) {
+        return (ReservaPO) this.reservaDAO.obter(index);
     }
 
     /**
@@ -188,19 +190,20 @@ public class ReservaBO {
      * @param usuario
      * @throws java.lang.Exception
      */
-    public static void fazerCheckin(UsuarioPO usuario) throws Exception {
+    public void fazerCheckin(UsuarioPO usuario) throws Exception {
         UsuarioPO usuarioPopulado = UsuarioBO.isAutentico(usuario);
         if (usuarioPopulado == null) {
             throw new Exception("Login e senha inválidos");
         }
-        if (!UsuarioBO.canDoChekin(usuarioPopulado)) {
+        UsuarioBO ub = new UsuarioBO();
+        if (!ub.canDoChekin(usuarioPopulado)) {
             throw new Exception("Não há reservas disponíveis para chekin no momentos");
         }
-        ReservaPO reserva = UsuarioBO.getMyReservaNow(usuarioPopulado);
+        ReservaPO reserva = ub.getMyReservaNow(usuarioPopulado);
         if (reserva.getStatus().equals(new StatusPO("emCurso"))) {
             throw new Exception("Você já fez checkin, pode usar a sala!");
         }
-        ReservaBO.setStatus(reserva, "emCurso");
+        ReservaBO.this.setStatus(reserva, "emCurso");
     }
 
     public static void fazerCheckout(UsuarioPO usuario) throws Exception {
@@ -216,6 +219,7 @@ public class ReservaBO {
         if (reserva.getStatus().equals(new StatusPO("concluida"))) {
             throw new Exception("Você já realizou o checkout!");
         }
-        ReservaBO.setStatus(reserva, "concluida");
+        ReservaBO rb = new  ReservaBO();
+        rb.setStatus(reserva, "concluida");
     }
 }

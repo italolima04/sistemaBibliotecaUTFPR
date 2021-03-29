@@ -38,6 +38,8 @@ public class ReservaRapidaMB implements Serializable {
     private List<BotaoHorario> botoesHorario;
     List<String> list = new ArrayList();
     private String reservado;
+    private UsuarioPO usuario;
+
 
     //Formatadores de data
     private final SimpleDateFormat formatoEmHoras;
@@ -149,7 +151,8 @@ public class ReservaRapidaMB implements Serializable {
         FacesMessage msg;
 
         try {
-            SalaBO.reservarSala(reserva);
+        	SalaBO sb = new SalaBO();
+        	sb.reservarSala(reserva);
             msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Reservado", getReserva().getStrDataInicial());
             reservado = "true";
         } catch (Exception ex) {
@@ -183,7 +186,8 @@ public class ReservaRapidaMB implements Serializable {
 //        }
         reserva.setUsuario(usuarioLogado);
         try {
-            SalaBO.reservarSala(reserva);
+        	SalaBO sb = new SalaBO();
+        	sb.reservarSala(reserva);
             msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Reservado", getReserva().getStrDataInicial());
             reservado = "true";
         } catch (Exception ex) {
@@ -205,17 +209,17 @@ public class ReservaRapidaMB implements Serializable {
         if (salasDisponiveis == null) {
             return;
         }
-        botoesHorario.clear();
+        this.botoesHorario.clear();
         for (Map.Entry<Date, Boolean> entry : salasDisponiveis.entrySet()) {
             if ((entry.getValue()) && ((new Date()).before(entry.getKey()))) {
-                botoesHorario.add(new BotaoHorario(entry.getKey().getHours(), "verde", false));
+            	this.botoesHorario.add(new BotaoHorario(entry.getKey().getHours(), "verde", false));
             }
             else {
-                botoesHorario.add(new BotaoHorario(entry.getKey().getHours(), "vermelho", true));
+            	this.botoesHorario.add(new BotaoHorario(entry.getKey().getHours(), "vermelho", true));
             }
         }
-        botoesHorario.add(new BotaoHorario(0, "branco", true));
-        Collections.sort(botoesHorario);
+        this.botoesHorario.add(new BotaoHorario(0, "branco", true));
+        Collections.sort(this.botoesHorario);
     }
 
     public void alterarEstilo() {
@@ -237,6 +241,26 @@ public class ReservaRapidaMB implements Serializable {
 
     public String getReservado() {
         return reservado;
+    }
+
+    public String canCancelReserva() {
+        if (this.reserva.getUsuario().getRa().equals(this.usuario.getRa()) || this.usuario.getRa().equals("admin")) {
+            return "true";
+        }
+        return "false";
+    }
+
+    public void cancelarReserva() {
+        FacesMessage msg;
+        ReservaBO rb = new ReservaBO();
+        if(this.canCancelReserva().equals("false")){
+            msg = new FacesMessage(FacesMessage.SEVERITY_WARN, "Essa reserva não é sua!", getReserva().getStrDataInicial());
+        }else if (rb.setStatus(this.reserva, "inativa")) {
+            msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Reserva Cancelada", getReserva().getStrDataInicial());
+        } else {
+            msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Reserva não pôde ser cancelada!", getReserva().getStrDataInicial());
+        }
+        FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 
 }

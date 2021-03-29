@@ -1,5 +1,6 @@
 package br.edu.utfpr.biblioteca.salas.model.bo;
 
+import br.edu.utfpr.biblioteca.salas.model.dao.ReservaDAO;
 import br.edu.utfpr.biblioteca.salas.model.dao.SalaDAO;
 import br.edu.utfpr.biblioteca.salas.model.entity.ReservaPO;
 import br.edu.utfpr.biblioteca.salas.model.entity.SalaPO;
@@ -7,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import br.edu.utfpr.biblioteca.salas.model.ReservasHorario;
-import static br.edu.utfpr.biblioteca.salas.model.bo.ReservaBO.reservaDAO;
 import br.edu.utfpr.biblioteca.salas.model.dao.UsuarioDAO;
 import br.edu.utfpr.biblioteca.salas.model.entity.UsuarioPO;
 import br.edu.utfpr.biblioteca.salas.model.entity.StatusPO;
@@ -38,7 +38,8 @@ public class SalaBO {
 
             Date data = CalendarioHelper.parseDate(date, Integer.toString(i), "0", "0");
 
-            int qtdReservas = reservaDAO.getQuantidadeReservas(data);
+            ReservaDAO rd = new ReservaDAO();
+            int qtdReservas = rd.getQuantidadeReservas(data);
 
             if (qtdReservas == qtdSalas) {
                 hashList.put(i, Boolean.FALSE);
@@ -62,7 +63,8 @@ public class SalaBO {
      */
     public static HashMap<Date, Boolean> getHorariosDisponiveis(Date date) {
         HashMap<Date, Boolean> horariosDisponiveis = new HashMap<>();
-        List<Date> horarios = CalendarioHelper.getHorarios(date);
+        CalendarioHelper ch = new CalendarioHelper();
+        List<Date> horarios = ch.getHorarios(date);
         for (Date horario : horarios) {
             horariosDisponiveis.put(horario, salaDAO.isAnyoneSalaVaga(horario));
         }
@@ -117,7 +119,7 @@ public class SalaBO {
      */
 
 
-    public static void reservarSala(ReservaPO reserva) throws Exception {
+    public void reservarSala(ReservaPO reserva) throws Exception {
         UsuarioPO usuario;
         SalaPO sala;
         boolean variavel = false;
@@ -138,13 +140,15 @@ public class SalaBO {
         	variavel = true;
         }
 
-        reservaDAO.metodoNovo(variavel, usuario, reserva);
+        ReservaDAO rd = new ReservaDAO();
+        rd.metodoNovo(variavel, usuario);
    }
 
     @Deprecated
-    public static void cancelarSala(ReservaPO reserva) throws Exception {
-        if (reservaDAO.isReservado(reserva)) {
-            reservaDAO.delete(reserva);
+    public void cancelarSala(ReservaPO reserva) throws Exception {
+        ReservaDAO rd = new ReservaDAO();
+        if (rd.isReservado(reserva)) {
+        	rd.delete(reserva);
         }
     }
 

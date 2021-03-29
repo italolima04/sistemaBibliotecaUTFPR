@@ -28,10 +28,10 @@ public class Hora implements Comparable<Hora> {
     }
 
     public String getId(int index) {
-        if (reservas.get(index).isLivre()) {
+        if (this.reservas.get(index).isLivre()) {
             return "-1";
         } else {
-            return String.valueOf(reservas.get(index).getId());
+            return String.valueOf(this.reservas.get(index).getId());
         }
     }
 

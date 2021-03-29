@@ -33,7 +33,7 @@ public class ReservaDAOTest {
 
     public void reservar() {
         SalaDAO salaDao = new SalaDAO();
-        SalaPO sala = salaDao.obter(2);
+        SalaPO sala = salaDao.obterPorId(2);
 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         UsuarioPO usuario = usuarioDAO.obter("1602063");
@@ -47,9 +47,10 @@ public class ReservaDAOTest {
     public void test_cancelarReserva(){
 
         ReservaPO reserva = null;
-        reserva = dao.obter(10);
+        reserva = (ReservaPO) dao.obter(10);
         assertTrue(reserva != null);
-        boolean t = ReservaBO.setStatus(reserva, "inativa");
+        ReservaBO rb = new ReservaBO();
+        boolean t = rb.setStatus(reserva, "inativa");
         assertTrue(t);
     }
 
@@ -57,9 +58,10 @@ public class ReservaDAOTest {
       public void test_updateReservaEmCurso(){
 
         ReservaPO reserva = null;
-        reserva = dao.obter(10);
+        reserva = (ReservaPO) dao.obter(10);
         assertTrue(reserva != null);
-        boolean t = ReservaBO.setStatus(reserva, "em_curso");
+        ReservaBO rb = new ReservaBO();
+        boolean t = rb.setStatus(reserva, "em_curso");
         assertTrue(t);
     }
 

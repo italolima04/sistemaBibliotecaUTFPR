@@ -33,15 +33,18 @@ public class ReservaBOTest {
     public void testSomeMethod() {
         System.out.println("");
         int a = 10;
-        Date data = CalendarioHelper.parseDateDate("10-05-2016");
-        HashMap<Date, HashMap<SalaPO, ReservaPO>> descreverDiaHash = ReservaBO.descreverDiaHash(data);
+        CalendarioHelper ch = new CalendarioHelper();
+        Date data = ch.parseDateDate("10-05-2016");
+        ReservaBO rb = new ReservaBO();
+        HashMap<Date, HashMap<SalaPO, ReservaPO>> descreverDiaHash = rb.descreverDiaHash(data);
         System.out.println("");
         System.out.println("");
     }
 
     public void testeChekin() {
         try {
-            ReservaBO.fazerCheckin(UsuarioBO.obterUsuario("1137085"));
+            ReservaBO rb = new ReservaBO();
+            rb.fazerCheckin(UsuarioBO.obterUsuario("1137085"));
             Assert.fail();
         } catch (Exception ex) {
         }
@@ -80,8 +83,9 @@ public class ReservaBOTest {
 //    @Test
     public void testWriteCsvReservasMensal() {
         List<RelatorioReservas> relatoriosReservas = new ArrayList<>();
+        CalendarioHelper ch = new CalendarioHelper();
         for (int i = 1; i < 6; i++) {
-            RelatorioReservas relatorio = new RelatorioReservas(CalendarioHelper.parseDateDate("01-" + String.valueOf(i) + "-2016"), (10 + i), (20 + i), (5 + i));
+            RelatorioReservas relatorio = new RelatorioReservas(ch.parseDateDate("01-" + String.valueOf(i) + "-2016"), (10 + i), (20 + i), (5 + i));
             relatoriosReservas.add(relatorio);
         }
         try {

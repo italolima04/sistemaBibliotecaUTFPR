@@ -8,23 +8,23 @@ import static org.junit.Assert.*;
 
 
 public class UsuarioBOTest {
-    
+
     UsuarioDAO daoUsuario = new UsuarioDAO();
-    
+    CalendarioHelper ch = new CalendarioHelper();
     public UsuarioBOTest() {
-        
+
     }
-    
+
 //    @Test
     public void test_CanDoCheckout(){
         UsuarioPO u = daoUsuario.obter("1602063");
         assertTrue(UsuarioBO.canDoCheckout(u));
     }
-    
+
 //    @Test
     public void test_Data(){
-        Date data = CalendarioHelper.getHoraCheia(new Date());
-        System.out.println("Data" +  CalendarioHelper.getData(data));
+        Date data = this.ch.getHoraCheia(new Date());
+        System.out.println("Data" +  this.ch.getData(data));
     }
 
 }
